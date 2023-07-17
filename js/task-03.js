@@ -17,7 +17,11 @@ const images = [
 const galleryContainer = document.querySelector('.gallery');
 
 const createImgItem = ({ url, alt }) =>
-  `<li class='gallery-item'><img src='${url}' alt='${alt}'</li>`;
+  `<li class='gallery-item'><img src='${url}' alt='${alt}', width='350', height = '220'></li>`;
 
 const galleryMarkup = images.map(createImgItem).join('');
 galleryContainer.insertAdjacentHTML('beforeend', galleryMarkup);
+
+galleryContainer.style.display = 'flex';
+galleryContainer.style.gap = '16px';
+galleryContainer.style.listStyle = 'none';
